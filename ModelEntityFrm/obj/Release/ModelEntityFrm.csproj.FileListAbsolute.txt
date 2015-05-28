@@ -1,0 +1,9 @@
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\ModelEntityFrm.dll.config
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\ModelEntityFrm.dll
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\ModelEntityFrm.pdb
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\EntityFramework.dll
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\EntityFramework.xml
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\obj\Release\ModelEntityFrm.dll
+C:\Users\Theodora\Documents\Visual Studio 2012\Projects\ProfessorSite\ModelEntityFrm\obj\Release\ModelEntityFrm.pdb

@@ -1,0 +1,43 @@
+﻿@model ModelEntityFrm.ProfessorClass
+
+@{
+    ViewBag.Title = "GetSearchIProfs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetSearchIProfs</h2>
+
+
+<script src="~/Content/themes/base/minified/list.min.js"></script>
+<div id="listId">
+    <ul><li>test 1</li><li>test 2</li></ul>
+  <ul class="pagination"></ul>
+</div>
+
+<script>
+  var options = {
+    valueNames: [ 'name', 'category' ],
+    page: 3,
+    plugins: [
+      ListPagination({})
+    ]
+  };
+
+  var listObj = new List('listId', options);
+</script>
+
+ <!-- START SIDEBAR -->
+                    <div id="sidebar" class="group">
+                    
+                        <div class="widget-first widget text-image">
+                            <h3>Customer support</h3>
+                            <div class="text-image" style="text-align:left"><img src="images/callus3.gif" alt="Customer support" /></div>
+                            <p>testing the widget of the image,</p>
+                        </div>
+                        
+                        <div class="widget-last widget text-image">
+                            <div class="text-image" style="text-align:left"><img src="images/arsk9hjn11.jpg" alt="" /></div>
+                        </div>
+                        
+                    </div>
+                    <!-- END SIDEBAR -->     

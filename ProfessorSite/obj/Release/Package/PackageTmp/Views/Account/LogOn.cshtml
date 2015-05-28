@@ -1,0 +1,76 @@
+﻿@model ModelEntityFrm.InformationClass
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Σύνδεση χρήστη";
+}
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+   <style type="text/css">
+        header{text-align:center;  font-family:Arial; font-size:16px; background-color:#f8e6ae; color:#888;}
+        section
+        {
+            text-align:center;
+            padding-left:100px;
+           
+        }
+
+       label
+       {
+           text-align:left;
+             font-size:1em;
+             line-height :1.61em;
+       }
+      
+       .field-validation-error,.validation-summary-errors
+     {
+         color:red;
+     }
+         input,select, textarea { border:1px solid #cecbcb; margin-top:10px; padding:10px; text-align:right }
+  
+    </style>
+
+<script src="~/Content/themes/jquery.validate.min.js"></script>
+<script src="~/Content/themes/jquery.validate.unobstrutive.min.js"></script>
+
+<header><strong>Σύνδεση</strong></header>
+<section>
+    
+@Html.ValidationSummary(true, "Η σύνδεση απέτυχε.Δείτε τα λάθη επικύρωσης και δοκιμάστε ξανά")
+
+@using (Html.BeginForm()) {
+    <div>
+        <table>
+                <tr>
+                    <td>  @Html.LabelFor(m => m.UserName)  : </td>
+                    <td >  @Html.TextBoxFor(m => m.UserName)</td>
+                    <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+               </tr>
+             <tr>
+                    <td>  @Html.LabelFor(m => m.Password)  : </td>
+                    <td>  @Html.PasswordFor(m => m.Password)</td>
+                    <td>@Html.ValidationMessageFor(m => m.Password)</td>
+               </tr>
+            <tr><td colspan="3" style="text-align:center"> <input type="submit" value="Σύνδεση" class="btn btn-info active"/>   </td></tr>
+            </table>
+           
+                
+           
+       
+    </div>
+}</section>
+
+<footer>
+    <div style="float:left;margin-left:120px">
+        <div style="float:left">Δεν έχετε λογαριασμό? Επιλέξτε :</div> 
+                         <div style=" float:right;">
+                                     <ul >
+                                 <li >
+                                     @Html.ActionLink("Εγγραφή καθηγητή", "RegisterProfessor") 
+                                     </li>
+                                 <li> @Html.ActionLink("Εγγραφή μαθητή", "RegisterProfessor") </li>
+                                     </ul>
+                                    </div>
+                 
+         </div> 
+</footer>

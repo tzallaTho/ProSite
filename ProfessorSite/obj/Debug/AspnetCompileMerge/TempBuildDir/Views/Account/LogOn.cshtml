@@ -1,0 +1,126 @@
+﻿@model ModelEntityFrm.InformationClass
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Σύνδεση χρήστη";
+}
+<link href="~/Content/themes/Bootstrap.css" rel="stylesheet" />
+ <style type="text/css">
+        header{text-align:center;  font-family:Arial; font-size:16px; background-color:#f8e6ae; color:#888;}
+        #leftgroup
+        {
+            text-align:center;
+            padding-left:100px;
+            float:left;
+           
+        }
+
+       #rightgroup
+       {
+           padding-right:25px;
+           float:right;
+       }
+
+       label
+       {
+           padding-right:2px;
+           text-align:left;
+             font-size:1em;
+             line-height :1.61em;
+       }
+      
+       .field-validation-error,.validation-summary-errors
+     {
+         color:red;
+     }
+         input,select, textarea { border:1px solid #cecbcb; margin-top:10px; padding:10px; text-align:right }
+  
+    </style>
+
+<script src="~/Content/themes/jquery.validate.min.js"></script>
+<script src="~/Content/themes/jquery.validate.unobstrutive.min.js"></script>
+
+
+
+
+<header><strong>Σύνδεση</strong></header>
+
+<div>
+      <hr  style="width:100%" />    
+ <div id="leftgroup">
+    
+@Html.ValidationSummary(true, "Η σύνδεση απέτυχε.Δείτε τα λάθη επικύρωσης και δοκιμάστε ξανά")
+
+@using (Html.BeginForm()) {
+    <div>
+        <table>
+                <tr>
+                    <td>  @Html.LabelFor(m => m.UserName)  : </td>
+                    <td >  @Html.TextBoxFor(m => m.UserName)</td>
+                    <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+               </tr>
+             <tr>
+                    <td>  @Html.LabelFor(m => m.Password)  : </td>
+                    <td>  @Html.PasswordFor(m => m.Password)</td>
+                    <td>@Html.ValidationMessageFor(m => m.Password)</td>
+               </tr>
+            <tr><td colspan="3" style="text-align:center"> <input type="submit" value="Σύνδεση" class="btn btn-info active"/>   </td></tr>
+            </table>
+           
+                
+           
+       
+    </div>
+}
+     </div>
+
+  
+                    <!-- START SIDEBAR -->
+  
+     
+                    <div id="rightgroup" class="group">
+                     <div style="border-style: solid;border-width: 2px;border-color:#2f368d; border-radius:20px; padding-right:7px" >
+                        <div class="widget-first widget text-image">
+                            <br />
+                            <span class="label label-default">        ΗΛΕΚΤΡΟΝΙΚΗ ΠΥΛΗ ΑΝΑΖΗΤΗΣΗΣ </span>
+                            <hr style="width:inherit" /> <hr style="width:inherit" />
+                            <p><span style="float:left;width:10px;height:10px;"><img src="~/Content/themes/base/images/teaching3.gif"
+                                 alt="Μεγάλα εκπαιδευτήρια" /></span>
+                                <span style="float:right"><span class="label label-info">  Δημοτικο</span> <br /> 
+                                    <span class="label label-info"> Γυμνάσιο</span> <br />
+                                    <span class="label label-info">  ΑΕΙ</span>  <span class="label label-info">  IEK</span><br />
+                                    <span class="label label-info"> ΤΕΙ</span> <span class="label label-info">  TEE</span>
+                                </span></p>
+                            
+                            <br />
+                          
+                            
+                            <br /><br />
+                             </div>
+                     
+                          </div> 
+                        <br />
+                        <div class="widget-last widget text-image">
+                            <div class="text-image" style="text-align:left">
+                                 <img style="width:250px" src="~/Content/themes/base/images/teaching2.gif" alt="" /></div>
+                        </div>
+                        
+                    </div>
+            
+
+                    <!-- END SIDEBAR -->   
+    </div>
+<footer>
+    <div style="float:left;margin-left:120px">
+        <div style="float:left">Δεν έχετε λογαριασμό? Επιλέξτε :</div> 
+                         <div style=" float:right;display:block;">
+                                     <ul >
+                                 <li  style="display:block;">
+                                     @Html.ActionLink("Εγγραφή καθηγητή", "RegisterProfessor") 
+                                     </li>
+                                 <li style="display:block;"> @Html.ActionLink("Εγγραφή μαθητή", "RegisterProfessor") </li>
+                                     </ul>
+                                    </div>
+                 
+         </div> 
+</footer>

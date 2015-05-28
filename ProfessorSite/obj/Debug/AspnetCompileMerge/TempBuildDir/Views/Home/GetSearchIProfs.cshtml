@@ -1,0 +1,55 @@
+﻿@model ProfessorSite.Models.MyViewModel
+
+@{
+    ViewBag.Title = "GetSearchIProfs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/themes/base/bootstrap.min.css" rel="stylesheet" />
+<h2>Αναζήτηση δασκάλου για μαθησιακές δυσκολίες</h2>
+
+ <div class="container">
+        <div class="row text-center">
+            <a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#basicModal">Επιλογή ειδικότητας</a>
+        </div>
+        <hr />    
+    </div>
+
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Εξειδικευμένος διδάσκαλος ανα περίπτωση μαθησιακής δυσκολίας</h4>
+          </div>
+           <div class="modal-body">
+@using (Html.BeginForm())
+{
+    <ul><li>  
+    @Html.Label("duslexia", "Ειδικοί στη δυσλεξία")
+        @Html.RadioButtonFor(model => model.IsDyslexia, "false", new { id = "duslexia" })
+</li><li> 
+  
+    @Html.Label("translation", "Eιδικοί στη μετάφραση")
+      @Html.RadioButtonFor(model => model.IsDyslexia, "true", new { id = "translation" })
+     </li></ul>
+  
+    <button style="visibility:hidden" type="submit">OK</button>
+} 
+  </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Κλείσιμο</button>
+            <button type="button" class="btn btn-primary">Αποθήκευση αλλαγών</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+<script src="~/Content/themes/base/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+</script>

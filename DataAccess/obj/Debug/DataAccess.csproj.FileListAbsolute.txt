@@ -1,0 +1,12 @@
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\DataAccess.dll.config
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\DataAccess.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\DataAccess.pdb
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\EntityFramework.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\ModelEntityFrm.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\ModelEntityFrm.pdb
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\EntityFramework.xml
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\obj\Debug\DataAccess.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\DataAccess\obj\Debug\DataAccess.pdb

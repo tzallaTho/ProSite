@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ModelEntityFrm.ProfessorClass>
+
+@{
+    ViewBag.Title = "Αναζήτηση καθηγητών";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Λίστα Καθηγητών</h2>
+<div id="divProductList">
+    @Html.Partial("_ProductsList",Model)
+</div>

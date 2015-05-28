@@ -1,0 +1,144 @@
+﻿@model PagedList.IPagedList<ModelEntityFrm.ProfessorClass>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Collections.Generic;
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<style type="text/css">
+          input,select, textarea { border:1px solid #cecbcb; margin-top:10px; padding:10px; text-align:right }
+    table tr
+    {
+        height:5px;
+    }
+  
+    </style>
+
+<div>
+@using (Html.BeginForm("GetData", "ProfessorList", FormMethod.Get))
+{
+    <p>
+        <b>Αναζήτηση:</b><br/> 
+        <b>Όνομα/επώνυμο  </b> @Html.TextBox("SearchByName", ViewBag.CurrentFilter as string)  |  
+        <b>Περιοχή  </b> @Html.TextBox("SearchByRegion", ViewBag.DescriptionFilter as string)  |  
+         <b>Νομός  </b>  @Html.DropDownList("StateList", "Νομός")
+        <br/>
+        
+        <input type="submit" class="btn btn-info active" value="Αναζήτηση" />
+    </p>
+} 
+</div>
+<aside><p>
+    @Html.ActionLink("Δημιουργία Λογαριασμού","RegisterProfessor","Account")
+</p></aside>
+@if(Model.Count>0)
+{
+        <table>
+            <tr>
+                 <th style="width:150px">
+                     @Html.ActionLink("Επώνυμο", "GetData", new { 
+                                                            sortOrder = ViewBag.NameSortParm, 
+                                                            currentFilter=ViewBag.CurrentFilter,
+                                                            searchByDescription = ViewBag.DescriptionFilter,
+                                                            SearchByName=ViewBag.NameParam,
+                                                            SearchByRegion=ViewBag.RegionParam, 
+                                                            SearchByState = ViewBag.StateParam})
+                 </th>
+
+                 <th style="width:150px">
+                     @Html.ActionLink("Όνομα", "GetData", new { 
+                                                            sortOrder = ViewBag.NameSortParm, 
+                                                            currentFilter=ViewBag.CurrentFilter,
+                                                            searchByDescription = ViewBag.DescriptionFilter,
+                                                            SearchByName=ViewBag.NameParam,
+                                                            SearchByRegion=ViewBag.RegionParam, 
+                                                            SearchByState = ViewBag.StateParam})
+                 </th>
+                <th style="width:200px">@Html.ActionLink("email επικοινωνίας", "GetData", new { 
+                                                            sortOrder = ViewBag.DescriptionSortParm, 
+                                                            currentFilter=ViewBag.CurrentFilter,
+                                                            searchByDescription = ViewBag.DescriptionFilter,
+                                                            searchByUser=ViewBag.UserParam,
+                                                            searchByBrand=ViewBag.BrandParam, 
+                                                            searchByCategory = ViewBag.CategoryParam})</th>
+                <th style="width:200px">@Html.ActionLink("Νομός", "GetData", new { 
+                                                            sortOrder = ViewBag.CategorySortParm, 
+                                                            currentFilter=ViewBag.CurrentFilter,
+                                                            searchByDescription = ViewBag.DescriptionFilter,
+                                                            searchByUser=ViewBag.UserParam,
+                                                            searchByBrand=ViewBag.BrandParam, 
+                                                            searchByCategory = ViewBag.CategoryParam})</th>
+                <th style="width:100px">@Html.ActionLink("Τηλέφωνο", "GetData", new { 
+                                                            sortOrder = ViewBag.BrandSortParm, 
+                                                            currentFilter=ViewBag.CurrentFilter,
+                                                            searchByDescription = ViewBag.DescriptionFilter,
+                                                            searchByUser=ViewBag.UserParam,
+                                                            searchByBrand=ViewBag.BrandParam, 
+                                                            searchByCategory = ViewBag.CategoryParam})</th>
+               
+               
+                     <th style="width:100px">
+                     @Html.ActionLink("Έικόνα", "GetData")
+                 </th>
+               
+                <th style="width:120px"></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr >
+                    <td style="color:black;font-weight:400;height:4px">
+                        @item.info.surname    
+                    </td>
+                     <td style="color:black;font-weight:400;height:4px">
+                          @item.info.name  
+                    </td>
+                 
+                    <td style="color:black;font-weight:400;height:4px">
+                         @item.info.Email
+                    </td> 
+                      <td style="color:black;font-weight:400;height:4px">
+                        @item._state.description
+                    </td>  
+                    <td style="color:black;font-weight:400;height:4px">
+                      @item.phoneNumber
+                    </td>  
+                      <td style="color:black;font-weight:400;height:4px">
+                        <img width="100" src='@Url.Action("getimage/" + @item.Id+"/0", "Products")' />
+                            </td>
+                     
+                   
+                   
+                    <td style="height:4px">
+                        @Html.ActionLink("Επικοινωνία", "Edit", new {id = item.Id})
+                      
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <br />
+        <div id='Paging' style="text-align: center">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+            of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("GetData", new {page, 
+                                                               sortOrder = ViewBag.CurrentSort, 
+                                                               currentFilter = ViewBag.CurrentFilter,
+                                                               searchByDescription = ViewBag.DescriptionFilter,
+                                                               searchByUser=ViewBag.UserParam,
+                                                               searchByBrand=ViewBag.BrandParam, 
+                                                               searchByCategory = ViewBag.CategoryParam}))
+        </div>
+    }
+else
+{
+    if (string.IsNullOrEmpty(ViewBag.CurrentFilter) && 
+        string.IsNullOrEmpty(ViewBag.CategoryParam))
+    {
+         <p>Δεν υπάρχει αποθηκευμένη καταχώρηση.</p>
+    }
+    else
+    {
+        <p>Δεν υπάρχουν δεδομένα βάσει κριτηρίων αναζήτησης.</p>
+    }
+}

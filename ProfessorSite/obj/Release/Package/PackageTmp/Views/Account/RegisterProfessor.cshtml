@@ -1,0 +1,108 @@
+﻿@model ModelEntityFrm.ProfessorClass
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Εγγραφή καθηγητή";
+}
+
+<!DOCTYPE html>
+
+ <style type="text/css">
+         input,select, textarea { border:1px solid #cecbcb; padding:10px; width:200px; }
+     dropdown
+     {
+         width: 220px;
+     }
+    
+     .field-validation-error,.validation-summary-errors
+     {
+         color:red;
+     }
+     button
+     {
+         text-align: center;
+     }
+    </style>
+<h2 style="padding-left:10px;">Δημιουργία λογαριασμού καθηγητή</h2>
+
+<script src="~/Content/themes/jquery.validate.min.js"></script>
+<script src="~/Content/themes/jquery.validate.unobstrutive.min.js"></script>
+
+  
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true, "Απέτυχε η καταχώρηση νέου καθηγητή.Δοκιμάστε ξανά.")
+    <div id="content">
+        <fieldset>
+            <div style="color:green"> <strong>@ViewBag.resultMessage</strong>  </div>
+            <table>
+                <tr>
+                   <td> @Html.LabelFor(m => m.info.UserName)  : </td>
+                    <td> <div class="input-group"> <span  class="input-group-addon" id="basic-addon1">@@</span> 
+                             
+                       @Html.TextBoxFor(m => m.info.UserName) </div> </td>
+                    <td>@Html.ValidationMessageFor(m => m.info.UserName)</td>
+                          
+               </tr>
+                 <tr>
+                    <td>  @Html.LabelFor(m => m.info.Email)  : </td>
+                    <td>
+                        <div class="input-group">
+                         <span class="input-group-addon" id="basic-addon1">example1@@example.com</span>  @Html.TextBoxFor(m => m.info.Email)</div></td>
+                    <td > @Html.ValidationMessageFor(m => m.info.Email)</td>
+               </tr>
+
+                 <tr>
+                    <td>   @Html.LabelFor(m => m.info.Password)  : </td>
+                    <td> <div class="input-group"> 
+                        <span class="input-group-addon" id="basic-addon1">6 χαρακτήρες</span>   @Html.PasswordFor(m => m.info.Password)   </div>  </td>
+                    <td>  @Html.ValidationMessageFor(m => m.info.Password)</td>
+               </tr>
+
+                <tr>
+                    <td>   @Html.LabelFor(m => m.info.ConfirmPassword)  : </td>
+                    <td>    @Html.PasswordFor(m =>  m.info.ConfirmPassword)</td>
+                    <td>   @Html.ValidationMessageFor(m =>  m.info.ConfirmPassword)</td>
+               </tr>
+
+                 <tr>
+                    <td>   @Html.LabelFor(m => m.info.surname)  : </td>
+                    <td>   @Html.TextBoxFor(m => m.info.surname)</td>
+                    <td>    @Html.ValidationMessageFor(m =>  m.info.surname)</td>
+               </tr>
+
+                <tr>
+                    <td >  @Html.LabelFor(m => m.info.name)  : </td>
+                    <td>    @Html.TextBoxFor(m => m.info.name)</td>
+                    <td>    @Html.ValidationMessageFor(m =>  m.info.surname)</td>
+               </tr>
+
+                <tr>
+                    <td>  @Html.LabelFor(m => m._state.description)  : </td>
+                    <td>     
+                          @Html.DropDownList("StateList", "Επιλογή νομού")
+                    </td>
+                    <td>  </td>
+               </tr>
+                
+                  <tr>
+                    <td>  @Html.LabelFor(m => m.AFM)  : </td>
+                    <td>  <div class="input-group"> 
+                        <span class="input-group-addon" id="basic-addon1">9 αριθμοί</span>   @Html.TextBoxFor(m => m.AFM) </div></td>
+                    <td>    @Html.ValidationMessageFor(m =>  m.AFM)</td>
+               </tr>
+
+                 <tr>
+                    <td>  @Html.LabelFor(m => m.phoneNumber)  : </td>
+                    <td>    @Html.TextBoxFor(m => m.phoneNumber) </td>
+                                                    
+                     <td>    @Html.ValidationMessageFor(m =>  m.phoneNumber)</td>
+               </tr>
+                <tr><td style="text-align:center" colspan="3">
+                     <input type="submit" value="Εγγραφή" class="btn btn-info active" /></td></tr>
+                   </table>
+         
+        </fieldset>
+
+    </div>
+}

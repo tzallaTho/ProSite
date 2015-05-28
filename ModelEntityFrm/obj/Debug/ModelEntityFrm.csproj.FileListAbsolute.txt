@@ -1,0 +1,9 @@
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\ModelEntityFrm.dll.config
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\ModelEntityFrm.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\ModelEntityFrm.pdb
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\EntityFramework.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\EntityFramework.xml
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\obj\Debug\ModelEntityFrm.dll
+c:\users\theodora\documents\visual studio 2012\Projects\ProfessorSite\ModelEntityFrm\obj\Debug\ModelEntityFrm.pdb
